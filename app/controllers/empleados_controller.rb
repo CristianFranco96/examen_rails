@@ -8,7 +8,7 @@ class EmpleadosController < ApplicationController
 
   def create
     @empleado = Empleado.new(empleados_params)
-    debugger
+    
     if @empleado.save
       redirect_to empleados_path
     end
