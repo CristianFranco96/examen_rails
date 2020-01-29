@@ -1,2 +1,26 @@
-<h1>Empleados#edit</h1>
-<p>Find me in app/views/empleados/edit.html.erb</p>
+<h1>Editing User</h1>
+
+<%=form_with(model: @empleado) do |form| %>
+  <h4 id='msg_error'></h4> 
+  <h5 id='pass_error_msg'></h5>
+  <h5 id='rfc_error_msg'></h5>
+
+  <div class="field">
+    <%= form.label :empleado_name %>
+    <%= form.text_field :empleado_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :empleado_rfc %>
+    <%= form.text_field :empleado_rfc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :empleado_puesto %>
+    <%= form.text_field :empleado_puesto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<%end%>

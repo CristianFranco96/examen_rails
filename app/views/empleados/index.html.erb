@@ -6,6 +6,7 @@
       <th>Nombre de empleado</th>      
       <th>RFC</th>
       <th>Puesto</th>
+      <th>Sucursal</th>
       <%
 =begin%>
  <th>Company name</th> 
@@ -21,6 +22,7 @@
         <td><%= empleado.empleado_name %></td>
         <td><%= empleado.empleado_rfc %></td>
         <td><%= empleado.empleado_puesto %></td>
+        <td><%= empleado.sucursal.sucursal_name %></td>
         <%
 =begin%>
  <td><%= empleado.company_name %></td> 
@@ -35,3 +37,5 @@
 </table>
 
 <br>
+
+<a href='/empleados/new'>Registrar Empleado</a>

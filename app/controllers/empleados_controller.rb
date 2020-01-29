@@ -7,9 +7,10 @@ class EmpleadosController < ApplicationController
   end
 
   def create
-    @empleado = Empleado.new(empleados_params)    
+ 
+    @empleado = Empleado.new(empleados_params)
+    @empleado.sucursal_id = params[:sucursal_id]   
     if @empleado.save
-      #hola
       redirect_to empleados_path
     end
   end
@@ -23,12 +24,17 @@ class EmpleadosController < ApplicationController
 
   def new
     @empleado = Empleado.new
+    @sucursales = Sucursal.where(user_id: current_user.id) 
   end
 
   def update
+    @empleado = Empleado.update(empleados_params)
+    redirect_to empleados_path
   end
 
   def destroy
+    @empleado.destroy
+    redirect_to empleados_path
   end
 
   def set_empleado
@@ -36,7 +42,7 @@ class EmpleadosController < ApplicationController
   end
 
   def empleados_params
-    params.require(:empleado).permit(:empleado_name, :empleado_rfc, :empleado_puesto)
+    params.require(:empleado).permit(:empleado_name, :empleado_rfc, :empleado_puesto, :id_sucursal)
   end
 
 end

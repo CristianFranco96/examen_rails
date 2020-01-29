@@ -3,6 +3,11 @@
   <h5 id='pass_error_msg'></h5>
   <h5 id='rfc_error_msg'></h5>
 
+
+  <div class='field'>
+    <label >Sucursal</label>
+    <%= select_tag "sucursal_id", options_from_collection_for_select(@sucursales, 'id', 'sucursal_name') %>
+  </div>
   <div class="field">
     <%= form.label :empleado_name %>
     <%= form.text_field :empleado_name %>
