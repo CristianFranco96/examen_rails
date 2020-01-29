@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sucursal_name: MyString
+  sucursal_add: MyString
+  zip_code: MyString
+  user_id: 1
+
+two:
+  sucursal_name: MyString
+  sucursal_add: MyString
+  zip_code: MyString
+  user_id: 1

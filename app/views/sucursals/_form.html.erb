@@ -1,0 +1,24 @@
+<%= form_with(model: sucursal, local: true) do |form| %>
+  <h4 id='msg_error'></h4> 
+  <h5 id='pass_error_msg'></h5>
+  <h5 id='rfc_error_msg'></h5>
+
+  <div class="field">
+    <%= form.label :sucursal_name %>
+    <%= form.text_field :sucursal_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sucursal_add %>
+    <%= form.text_field :sucursal_add %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code %>
+    <%= form.text_field :zip_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
