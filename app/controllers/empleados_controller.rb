@@ -7,9 +7,9 @@ class EmpleadosController < ApplicationController
   end
 
   def create
-    @empleado = Empleado.new(empleados_params)
-    
+    @empleado = Empleado.new(empleados_params)    
     if @empleado.save
+      #hola
       redirect_to empleados_path
     end
   end
