@@ -1,0 +1,37 @@
+<h1>Empleados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre de empleado</th>      
+      <th>RFC</th>
+      <th>Puesto</th>
+      <%
+=begin%>
+ <th>Company name</th> 
+<%
+=end%>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empleados.each do |empleado| %>
+      <tr>
+        <td><%= empleado.empleado_name %></td>
+        <td><%= empleado.empleado_rfc %></td>
+        <td><%= empleado.empleado_puesto %></td>
+        <%
+=begin%>
+ <td><%= empleado.company_name %></td> 
+<%
+=end%>
+        <td><%= link_to 'Show', empleado %></td>
+        <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
+        <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -7,8 +7,7 @@ class SucursalsController < ApplicationController
 
   def create
     @sucursal = Sucursal.new(sucursals_params)
-    @sucursal.user_id = current_user.id
-    
+    @sucursal.user_id = current_user.id    
 
     if @sucursal.save
       redirect_to sucursals_path 
