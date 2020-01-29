@@ -11,5 +11,12 @@
 
   <body>
     <%= yield %>
+    <%= insert_paloma_hook %>
   </body>
 </html>
+
+<script>
+  $(document).ready(function(){
+    Paloma.start();
+  });
+</script>
