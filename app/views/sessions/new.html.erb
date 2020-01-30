@@ -1,2 +1,22 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class=" center-block">  
+  <div clas='container-log'>
+  <h1>Acceder</h1>
+    <p id="alert"><%= alert %></p>  
+    <%= form_tag sessions_path do |form| %>
+      <div class="field">
+        <label>Email</label>
+        <%= text_field_tag :email%>
+      </div>
+      <div  class="field">
+        <label>Contraseña</label>
+        <%= password_field_tag :password %>
+      </div>
+      <div  class="field">
+        <%= submit_tag "Login"%>   
+      </div>
+    <% end %>
+    <div>
+    <p class="secundary-text badge badge-light"><%= link_to "Sign Up", signup_path %></p>
+    </div>
+  </div>
+</div>
