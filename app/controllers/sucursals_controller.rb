@@ -3,6 +3,7 @@ class SucursalsController < ApplicationController
 
   def index
     @sucursals = Sucursal.all
+
   end
 
   def create
@@ -45,4 +46,6 @@ class SucursalsController < ApplicationController
   def sucursals_params
     params.require(:sucursal).permit(:sucursal_name, :sucursal_add, :zip_code, :user_id)
   end
+
+  
 end
