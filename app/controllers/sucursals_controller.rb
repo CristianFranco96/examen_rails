@@ -14,14 +14,14 @@ class SucursalsController < ApplicationController
     else
       format.html { render :new }
       format.json { render json: @sucursal.errors, status: :unprocessable_entity }
-
     end
   end
 
   def show
   end
-
+#vista
   def edit
+    
   end
 
   def new
@@ -29,6 +29,8 @@ class SucursalsController < ApplicationController
   end
 
   def update
+    @sucursal.update(sucursals_params)
+    redirect_to home_path
   end
 
   def destroy
