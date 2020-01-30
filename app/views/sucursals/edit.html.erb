@@ -1,5 +1,11 @@
 <h1>Editando sucursal: <%= @sucursal.sucursal_name%></h1>
 
+<br/>
+
 <%= render 'form', sucursal: @sucursal %>
 
-<%= render 'empleados_list', empleados: @empleado %>
+<br/>
+<br/>
+
+<h2>Empleados de: <%= @sucursal.sucursal_name %></h2>
+<%= render 'empleados_list', empleado: @empleados %>

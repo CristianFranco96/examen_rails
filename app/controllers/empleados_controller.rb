@@ -1,6 +1,6 @@
 class EmpleadosController < ApplicationController
+  before_action :log_in
   before_action :set_empleado, only: [:show, :edit, :update, :destroy]
-  before_action :log_ing
 
   def index     
     @empleados = Empleado.all

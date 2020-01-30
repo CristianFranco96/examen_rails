@@ -1,9 +1,9 @@
 class SucursalsController < ApplicationController
+  before_action :log_in
   before_action :set_sucursal, only: [:show, :edit, :update, :destroy]
-  before_action :log_ing
 
   def index
-    @sucursals = Sucursal.all
+    @sucursals = Sucursal.all    
   end
 
   def create
@@ -22,7 +22,7 @@ class SucursalsController < ApplicationController
   end
 #vista
   def edit
-    
+    @empleados = Empleado.where(sucursal_id: params[:id])
   end
 
   def new
@@ -30,7 +30,7 @@ class SucursalsController < ApplicationController
   end
 
   def update
-    @sucursal.update(sucursals_params)
+    @sucursal.update(sucursals_params)   
     redirect_to home_path
   end
 
@@ -45,7 +45,5 @@ class SucursalsController < ApplicationController
 
   def sucursals_params
     params.require(:sucursal).permit(:sucursal_name, :sucursal_add, :zip_code, :user_id)
-  end
-
-  
+  end  
 end

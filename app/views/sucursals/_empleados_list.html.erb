@@ -4,15 +4,16 @@
       <th>Empleado</th>      
       <th>RFC</th>
       <th>Puesto</th>
+      <th colspan='3'></th>
     </tr>
   </thead>
 
   <tbody>
     <% @empleados.each do |empleado| %>
       <tr>
-        <td><%= empleado.sucursal_name %></td>
-        <td><%= empleado.sucursal_add %></td>
-        <td><%= empleado.zip_code %></td>
+        <td><%= empleado.empleado_name %></td>
+        <td><%= empleado.empleado_rfc %></td>
+        <td><%= empleado.empleado_puesto %></td>
         <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
         <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
