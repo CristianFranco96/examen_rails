@@ -1,13 +1,12 @@
 class EmpleadosController < ApplicationController
-
   before_action :set_empleado, only: [:show, :edit, :update, :destroy]
+  before_action :log_ing
 
-  def index 
+  def index     
     @empleados = Empleado.all
   end
 
-  def create
- 
+  def create 
     @empleado = Empleado.new(empleados_params)
     @empleado.sucursal_id = params[:sucursal_id]   
     if @empleado.save

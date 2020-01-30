@@ -1,9 +1,9 @@
 class SucursalsController < ApplicationController
   before_action :set_sucursal, only: [:show, :edit, :update, :destroy]
+  before_action :log_ing
 
   def index
     @sucursals = Sucursal.all
-
   end
 
   def create

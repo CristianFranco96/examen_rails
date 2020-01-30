@@ -6,6 +6,8 @@
           <th>Sucursal</th>
           <th>Dirreccion</th>
           <th>CP</th>
+          <th>No. Empleados</th>
+          <th>Editar</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -16,10 +18,19 @@
             <td><%= sucursal.sucursal_name %></td>
             <td><%= sucursal.sucursal_add %></td>            
             <td><%= sucursal.zip_code %></td>
+            <td><%= sucursal.empleados.all.count %></td>             
             <td><a href='/sucursals/<%= sucursal.id%>/edit'>Editar</a></td>
           </tr>
         <% end %>
-      </tbody>    
+      </tbody>
+
     </table>
+
+
+<%
+=begin%>
+ <td><%= sucursal.count %></td> 
+<%
+=end%>
     
 </div>

@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Empleado</th>      
+      <th>RFC</th>
+      <th>Puesto</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empleados.each do |empleado| %>
+      <tr>
+        <td><%= empleado.sucursal_name %></td>
+        <td><%= empleado.sucursal_add %></td>
+        <td><%= empleado.zip_code %></td>
+        <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
+        <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
