@@ -1,22 +1,27 @@
-<table>
-  <thead>
-    <tr>
-      <th>Empleado</th>      
-      <th>RFC</th>
-      <th>Puesto</th>
-      <th colspan='3'></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @empleados.each do |empleado| %>
+<div class='container'>
+<h2>Empleados de: <%= @sucursal.sucursal_name %></h2>
+  <table class='table table-striped'>
+    <thead>
       <tr>
-        <td><%= empleado.empleado_name %></td>
-        <td><%= empleado.empleado_rfc %></td>
-        <td><%= empleado.empleado_puesto %></td>
-        <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
-        <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Empleado</th>      
+        <th>RFC</th>
+        <th>Puesto</th>
+        <th colspan='3'></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @empleados.each do |empleado| %>
+        <tr>
+          <td><%= empleado.empleado_name %></td>
+          <td><%= empleado.empleado_rfc %></td>
+          <td><%= empleado.empleado_puesto %></td>
+          <td><%= link_to 'Editar', edit_empleado_path(empleado) %></td>
+          <td><%= link_to 'Eliminar', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <a href='/empleados/new' class='btn btn-primary btn-sm mb-2' >Nuevo Empleado</a>
+</div>

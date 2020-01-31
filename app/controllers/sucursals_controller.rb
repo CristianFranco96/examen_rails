@@ -3,7 +3,7 @@ class SucursalsController < ApplicationController
   before_action :set_sucursal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @sucursals = Sucursal.all    
+    @sucursals = Sucursal.where(user_id: current_user)    
   end
 
   def create

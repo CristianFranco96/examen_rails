@@ -1,36 +1,38 @@
-<h1>Sucursales Actuales</h1>
-<div class='container'>
-    <table class='table'>
-      <thead>
-        <tr>
-          <th>Sucursal</th>
-          <th>Dirreccion</th>
-          <th>CP</th>
-          <th>No. Empleados</th>
-          <th>Editar</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @sucursales.each do |sucursal| %>
+<% if @sucursales.all.count != 0 %>
+  <h1 class='text-center'>Sucursales Actuales</h1>
+  <div class='container'>
+      <table class='table'>
+        <thead>
           <tr>
-            <td><%= sucursal.sucursal_name %></td>
-            <td><%= sucursal.sucursal_add %></td>            
-            <td><%= sucursal.zip_code %></td>
-            <td><%= sucursal.empleados.all.count %></td>             
-            <td><a href='/sucursals/<%= sucursal.id%>/edit'>Editar</a></td>
+            <th>Sucursal</th>
+            <th>Dirreccion</th>
+            <th>CP</th>
+            <th>No. Empleados</th>
+            <th>Editar</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
+        </thead>
 
-    </table>
-
-
-<%
-=begin%>
- <td><%= sucursal.count %></td> 
-<%
-=end%>
-    
-</div>
+        <tbody>
+          <% @sucursales.each do |sucursal| %>
+            <tr>
+              <td><%= sucursal.sucursal_name %></td>
+              <td><%= sucursal.sucursal_add %></td>            
+              <td><%= sucursal.zip_code %></td>
+              <td><%= sucursal.empleados.all.count %></td>             
+              <td><a href='/sucursals/<%= sucursal.id%>/edit'>Editar</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+  <%else%>
+    <div class='container'>
+      <br/>
+      <h1 class='text-center'>Crear tu primera sucursal</h1>
+      <br/>
+      <div class='d-flex justify-content-center'>
+        <a href='/sucursals/new' class='btn btn-lg btn-success text-center'>Haz Clic Aqui</a>
+      </div>
+    </div>
+<%end%>

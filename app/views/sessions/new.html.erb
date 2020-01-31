@@ -1,22 +1,21 @@
 <div class=" center-block">  
-  <div clas='container-log'>
-  <h1>Acceder</h1>
-    <p id="alert"><%= alert %></p>  
+  <div clas='form-group'>
+    <h1 class="text-center">Acceder</h1>    
     <%= form_tag sessions_path do |form| %>
       <div class="field">
         <label>Email</label>
-        <%= text_field_tag :email%>
+        <%= text_field_tag :email, "", class:'form-control' %>
       </div>
-      <div  class="field">
+      <div class="form-group">
         <label>Contraseña</label>
-        <%= password_field_tag :password %>
+        <%= password_field_tag :password, "", class:'form-control' %>
       </div>
-      <div  class="field">
-        <%= submit_tag "Login"%>   
+      <div class="field">
+        <%= submit_tag "Entrar", class:'btn btn-primary'%>   
       </div>
     <% end %>
     <div>
-    <p class="secundary-text badge badge-light"><%= link_to "Sign Up", signup_path %></p>
+    <p><%= link_to "Sign Up", signup_path, class:"secundary-text badge badge-light text-decoration-none" %></p>
     </div>
   </div>
 </div>

@@ -1,11 +1,14 @@
-class UsersController < ApplicationController
-  before_action :log_in
+class UsersController < ApplicationController  
+  before_action :log_in, only: [:show, :index, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  
+  if @current_user.present?
+    redirect_to home_path
+  end
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all    
   end
 
   # GET /users/1

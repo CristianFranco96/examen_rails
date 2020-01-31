@@ -1,20 +1,13 @@
 class EmpleadosController < ApplicationController
   before_action :log_in
-  before_action :set_empleado, only: [:show, :edit, :update, :destroy]
-
-  def index     
-    @empleados = Empleado.all
-  end
+  before_action :set_empleado, only: [:edit, :update, :destroy]
 
   def create 
     @empleado = Empleado.new(empleados_params)
     @empleado.sucursal_id = params[:sucursal_id]   
     if @empleado.save
-      redirect_to empleados_path
+      redirect_to sucursals_path
     end
-  end
-
-  def show
   end
 
   def edit
@@ -28,12 +21,12 @@ class EmpleadosController < ApplicationController
 
   def update
     @empleado = Empleado.update(empleados_params)
-    redirect_to empleados_path
+    redirect_to sucursals_path
   end
 
   def destroy
     @empleado.destroy
-    redirect_to empleados_path
+    redirect_to sucursals_path
   end
 
   def set_empleado

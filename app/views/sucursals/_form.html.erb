@@ -1,22 +1,26 @@
-<%= form_with(model: sucursal, local: true) do |form| %>
-  <h5 id='msg_error'></h5> 
+<div class='container'>
+  <h1>Editando sucursal: <%= @sucursal.sucursal_name%></h1>
+  <div class='form-group'>
+    <%= form_with(model: sucursal, local: true) do |form| %>
+      <p id='msg_error'></p> 
+      <div class="">
+        <%= form.label :sucursal_name %>
+        <%= form.text_field :sucursal_name, class:'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :sucursal_name %>
-    <%= form.text_field :sucursal_name %>
-  </div>
+      <div class="field">
+        <%= form.label :sucursal_add %>
+        <%= form.text_field :sucursal_add, class:'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :sucursal_add %>
-    <%= form.text_field :sucursal_add %>
+      <div class="field">
+        <%= form.label :zip_code %>
+        <%= form.text_field :zip_code, class:'form-control' %>
+      </div>
+      <br/>
+      <div class="">
+        <%=form.submit "Actualizars Sucursal", class:'btn btn-primary'%>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :zip_code %>
-    <%= form.text_field :zip_code %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

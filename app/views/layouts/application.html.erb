@@ -21,14 +21,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/home">Inicio<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/sucursals">Sucursales</a>
-            </li> 
-            <li class="nav-item active">
-              <a class="nav-link" href="/empleados">Empleados</a>
-            </li>           
+            <%if any_sucursal > 0 %>
+              <li class="nav-item active">
+                <a class="nav-link" href="/sucursals">Sucursales</a>
+              </li> 
+              <li class="nav-item active">
+                <a class="nav-link" href="/empleados/new">Nuevo Empleado</a>
+              </li>
+            <%else%>
+              
+            <%end%>           
           </ul>
           <form class="form-inline my-2 my-lg-0">      
             <a class="btn btn-outline-danger my-2 my-sm-0" type="submit" href='/logout'>Log Out</a>

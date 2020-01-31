@@ -1,8 +1,10 @@
-<h1>Empleados</h1>
+<%
+=begin%>
+ <h1>Empleados</h1>
 <table>
   <thead>
     <tr>
-      <th>Nombre de empleado</th>      
+      <th>Nombre de empleado</th>
       <th>RFC</th>
       <th>Puesto</th>
       <th>Sucursal</th>
@@ -17,11 +19,7 @@
         <td><%= empleado.empleado_rfc %></td>
         <td><%= empleado.empleado_puesto %></td>
         <td><%= empleado.sucursal.sucursal_name %></td>
-        <%
-=begin%>
- <td><%= empleado.company_name %></td> 
-<%
-=end%>        
+
         <td><%= link_to 'Editar', edit_empleado_path(empleado) %></td>
         <td><%= link_to 'Eliminar', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -31,4 +29,6 @@
 
 <br>
 
-<a href='/empleados/new'>Registrar Empleado</a>
+<a href='/empleados/new'>Registrar Empleado</a> 
+<%
+=end%>

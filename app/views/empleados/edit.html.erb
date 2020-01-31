@@ -1,26 +1,31 @@
-<h1>Editing User</h1>
+<div class='container'>
+  <div class='form-group'>
+    <h1>Editar Empleado</h1>
 
-<%=form_with(model: @empleado) do |form| %>
-  <h4 id='msg_error'></h4> 
-  <h5 id='pass_error_msg'></h5>
-  <h5 id='rfc_error_msg'></h5>
+    <%=form_with(model: @empleado) do |form| %>
+      <h4 id='msg_error'></h4> 
+      <h5 id='pass_error_msg'></h5>
+      <h5 id='rfc_error_msg'></h5>
 
-  <div class="field">
-    <%= form.label :empleado_name %>
-    <%= form.text_field :empleado_name %>
+      <div class="field">
+        <%= form.label "Nombre"%>
+        <%= form.text_field :empleado_name, class:'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label "RFC" %>
+        <%= form.text_field :empleado_rfc, :readonly => true, class:'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label "Puesto" %>
+        <%= form.text_field :empleado_puesto , class:'form-control'%>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Editar Empleado", class:"btn btn-primary mt-2"%>
+      </div>
+    <%end%>
+    <%= link_to 'Cancelar', sucursals_path, class:'btn btn-sm btn-danger mt-2' %>
   </div>
-
-  <div class="field">
-    <%= form.label :empleado_rfc %>
-    <%= form.text_field :empleado_rfc, :readonly => true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :empleado_puesto %>
-    <%= form.text_field :empleado_puesto %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<%end%>
+</div>

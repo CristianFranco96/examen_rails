@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :sucursals
-  resources :empleados
+  resources :empleados, only: [:new, :create, :edit, :destroy]
   root 'sessions#new' 
   get 'home', to: 'home#index', as: 'home'
   get 'signup', to: 'users#new', as: 'signup'
