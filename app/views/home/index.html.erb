@@ -1,7 +1,8 @@
 <% if @sucursales.all.count != 0 %>
-  <h1 class='text-center'>Sucursales Actuales</h1>
-  <div class='container'>
-      <table class='table'>
+  <h1 class='text-center mt-3'>Sucursales Actuales</h1>
+  <br/>
+  <div class='container' id='main_table'>
+      <table class='table text-center'>
         <thead>
           <tr>
             <th>Sucursal</th>
@@ -25,6 +26,7 @@
           <% end %>
         </tbody>
       </table>
+      <%=link_to "Descargar PDF", pdf_path(format: :pdf)%>
   </div>
   <%else%>
     <div class='container'>
@@ -33,6 +35,6 @@
       <br/>
       <div class='d-flex justify-content-center'>
         <a href='/sucursals/new' class='btn btn-lg btn-success text-center'>Haz Clic Aqui</a>
-      </div>
+      </div>      
     </div>
 <%end%>

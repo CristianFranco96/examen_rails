@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :empleados, only: [:new, :create, :edit, :destroy]
   root 'sessions#new' 
   get 'home', to: 'home#index', as: 'home'
+  get 'home/pdf_convert', to: 'home#pdf_convert', as: 'pdf'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'

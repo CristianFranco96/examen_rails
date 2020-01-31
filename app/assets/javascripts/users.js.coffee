@@ -33,8 +33,9 @@ validar_formulario = (e) ->
     validation_faild = true
 
   rfc_len = user_rfc.val()
-  if (rfc_len.length <= 12 && rfc_len.length >= 13) || user_rfc.val() == ''
+  if (rfc_len.length < 12 || rfc_len.length > 13) || user_rfc.val() == ''
     rfc_error.text('RFC Invalido')
+    console.log user_rfc.val().length
     user_rfc.css({"border": "solid 2px red"})
     validation_faild = true
 
