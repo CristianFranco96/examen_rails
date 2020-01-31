@@ -13,8 +13,9 @@ class SessionsController < ApplicationController
     if user.present?
       session[:user_id] = user.id
       redirect_to home_path
-    else
-      redirect_to root_path
+    else      
+      @error = "Email/Contraseña Invalidos"
+      redirect_to login_path
     end
     
   end
