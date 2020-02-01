@@ -15,19 +15,19 @@
   </thead>
 
   <tbody>
-    <% @sucursals.each do |user| %>
+    <% @sucursals.each do |sucursal| %>
       <tr>
-        <td><%= user.sucursal_name %></td>
-        <td><%= user.sucursal_add %></td>
-        <td><%= user.zip_code %></td>       
-        <td><%= link_to 'Editar', edit_sucursal_path(user) %></td>
-        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= sucursal.sucursal_name %></td>
+        <td><%= sucursal.sucursal_add %></td>
+        <td><%= sucursal.zip_code %></td>       
+        <td><%= link_to 'Editar', edit_sucursal_path(sucursal) %></td>
+        <td><%= link_to 'Eliminar', sucursal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <a href='/sucursals/new' class="text-decoration-none btn btn-sm btn-outline-primary">Nueva Sucursal</a>
+<%= link_to "Exportar Sucursales a Excel", sucursals_path(format: "xlsx") %>
 </div>
 
 <br>

@@ -3,7 +3,13 @@ class SucursalsController < ApplicationController
   before_action :set_sucursal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @sucursals = Sucursal.where(user_id: current_user)    
+    @sucursals = Sucursal.where(user_id: current_user)
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.header['Content-Disposition'] = 'attachment; file="Tabla de Sucursales.xlsx"'
+      }
+    end
   end
 
   def create
@@ -19,6 +25,7 @@ class SucursalsController < ApplicationController
   end
 
   def show
+
   end
 #vista
   def edit

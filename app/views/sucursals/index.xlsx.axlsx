@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Sucursales") do |sheet|
+  sheet.add_row %w(Nombre Direccion CP)
+
+  @sucursals.each do |sucursal|
+    sheet.add_row [sucursal.sucursal_name, sucursal.sucursal_add, sucursal.zip_code]
+  end
+end

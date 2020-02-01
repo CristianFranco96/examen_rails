@@ -58,14 +58,18 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rspec-rails'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # rails-generate-pdf/Gemfile
-gem 'jquery-rails'
 gem 'bootstrap'
+# HTML to PDF
 gem 'wicked_pdf'
 #gem 'wkhtmltopdf-binary'
+
+# Excel
+gem 'caxlsx_rails'
+gem 'caxlsx'
+gem 'rubyzip'

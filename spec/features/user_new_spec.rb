@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "sigin", type: :feature, :js => true do
+describe "Registro_campos_vacios", type: :feature, :js => true do
   it "Registro_campos_vacios" do
     visit '/sessions/new'       
     find_link('Sign Up').click
@@ -21,7 +21,6 @@ describe "bad_RFC", type: :feature, :js => true do
     fill_in("user_full_name", with: "Erick Zuñiga")
     fill_in("user_rfc", with: "EFZP960704")
     fill_in("user_company_name", with: "LOL")
-
 
     find_button('Registrarse').click
     # expect(page).to have_content 'Campos Requeridos'
