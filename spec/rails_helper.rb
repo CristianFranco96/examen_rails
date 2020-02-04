@@ -2,6 +2,8 @@
 # ActiveRecord::Migration.maintain_test_schema!
 
 require 'spec_helper'
+#require 'support/factory_bot'
+
 ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../config/environment', __dir__)
@@ -81,4 +83,12 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include FactoryBot::Syntax::Methods
+end
+
+def setup_user
+  @usuario = FactoryBot.build(:new_user)
+  @usuario.email = "erick.zuniga@gmail.com"
+  @usuario.password = "erick123"
 end
