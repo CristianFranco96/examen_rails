@@ -88,8 +88,6 @@ RSpec.configure do |config|
 end
 
 def setup_user
-  @usuario = FactoryBot.build(:new_user)
-  @usuario.email = "erick.zuniga@gmail.com"
-  @usuario.password = "erick123"
-  @usuario.save
+  @usuario = FactoryBot.create(:new_user)
+  #@usuario.save
 end

@@ -1,9 +1,16 @@
 wb = xlsx_package.workbook
 
-wb.add_worksheet(name: "Sucursales") do |sheet|
-  sheet.add_row %w(Nombre Direccion CP)
+wb.styles do |s|
 
-  @sucursals.each do |sucursal|
-    sheet.add_row [sucursal.sucursal_name, sucursal.sucursal_add, sucursal.zip_code]
+  black_cell = s.add_style :bg_color => "00", :fg_color => "FF", :sz => 14, :alignment => { :horizontal=> :center}
+  blue_cell = s.add_style :bg_color => "0000FF", :fg_color => "FF", :sz => 20, :alignment => {:horizontal=> :center}
+
+  
+  wb.add_worksheet(name: "Sucursales") do |sheet|
+    sheet.add_row %w(Nombre Direccion CP), :style => [blue_cell, blue_cell, blue_cell]
+
+    @sucursals.each do |sucursal|
+      sheet.add_row [sucursal.sucursal_name, sucursal.sucursal_add, sucursal.zip_code], :style => Axlsx::STYLE_THIN_BORDER
+    end
   end
 end
